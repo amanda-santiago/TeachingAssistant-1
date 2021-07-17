@@ -37,5 +37,4 @@ export class AlunoService {
                  retry(2)
                );
   }
-
 }

@@ -13,6 +13,7 @@ import { AlunoService } from './aluno.service';
     alunos: Aluno[] = [];
     cpfduplicado: boolean = false;
 
+
     constructor(private alunoService: AlunoService) {}
 
      criarAluno(a: Aluno): void {
@@ -24,7 +25,7 @@ import { AlunoService } from './aluno.service';
                     this.aluno = new Aluno();
                   } else {
                     this.cpfduplicado = true;
-                  } 
+                  }
                 },
                 msg => { alert(msg.message); }
               );
@@ -33,7 +34,7 @@ import { AlunoService } from './aluno.service';
     onMove(): void {
        this.cpfduplicado = false;
     }
-
+  
      ngOnInit(): void {
        this.alunoService.getAlunos()
              .subscribe(
@@ -41,5 +42,4 @@ import { AlunoService } from './aluno.service';
                msg => { alert(msg.message); }
               );
      }
-
   }
