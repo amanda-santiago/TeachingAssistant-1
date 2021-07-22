@@ -42,4 +42,16 @@ import { AlunoService } from './aluno.service';
                msg => { alert(msg.message); }
               );
      }
+     remover(cpf: string) {
+      this.alunoService.remover(cpf)
+        .subscribe(
+          _ => {
+            var result = this.alunos.findIndex(a => a.cpf == cpf)!;
+  
+            if (result == -1) return
+            this.alunos.splice(result, 1)
+          },
+          msg => { alert(msg.message); }
+        );
+    }
   }
